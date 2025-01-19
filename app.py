@@ -6,7 +6,7 @@ import json
 from typing import List, Dict
 
 # Must be the first Streamlit command
-st.set_page_config(page_title="Embedding Tabanlı Soru-Cevap Sistemi", layout="wide")
+st.set_page_config(page_title="Mevzuat Tabanlı Soru-Cevap Sistemi", layout="wide")
 
 # Initialize session state for chat history if it doesn't exist
 if 'messages' not in st.session_state:
@@ -87,7 +87,7 @@ def process_question(question: str) -> str:
     return answer_question(question, relevant_chunks)
 
 def main():
-    st.title("Embedding Tabanlı Soru-Cevap Sistemi")
+    st.title("Mevzuat Tabanlı Soru-Cevap Sistemi")
     
     # Setup sidebar and check if app is ready
     is_ready = setup_sidebar()
