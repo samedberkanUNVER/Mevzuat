@@ -77,7 +77,7 @@ def process_question(question: str) -> str:
     index.add(np.array(embeddings))
 
     query_embedding = get_embeddings(question)
-    D, I = index.search(np.array([query_embedding]), k=5)
+    D, I = index.search(np.array([query_embedding]), k=10)
     relevant_chunks = [chunks[i] for i in I[0]]
     
     # Add debug information if needed
