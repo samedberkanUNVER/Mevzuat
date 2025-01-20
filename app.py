@@ -59,7 +59,7 @@ def answer_question(question: str, relevant_texts: List[str]) -> str:
     context = "\n\n".join(relevant_texts)
     prompt = f"Belge içeriği:\n{context}\n\nSoru: {question}\nCevap:"
     response = openai.ChatCompletion.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "Sen yardımsever bir asistansın. Yorum yapma, daha net cevap ver. Hükmün nereden çıktığını bilmek istiyoruz. Sana verilen dokümandaki hükme referans bulunarak cevaplar ver."},
             {"role": "user", "content": prompt}
