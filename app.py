@@ -61,7 +61,16 @@ def answer_question(question: str, relevant_texts: List[str]) -> str:
     response = openai.ChatCompletion.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "Sen yardımsever bir asistansın. Yorum yapma, daha net cevap ver. Hükmün nereden çıktığını bilmek istiyoruz. Sana verilen dokümandaki hükme referans bulunarak cevaplar ver."},
+            {"role": "system", "content": """
+            Sen yardımsever bir asistansın. 
+            Yorum yapma, 
+            daha net cevap ver. 
+            Hükmün nereden çıktığını bilmek istiyoruz. 
+            Sana verilen dokümandaki hükme referans bulunarak cevaplar ver.
+            VERMENİ İSTEDİĞİM ÖRNEK CEVAP:
+            1- "Yönetmeliğinin "Köşe Başı Parsellerde Kotlandırma" başlıklı 13.maddesinde belirtildiği üzere..."
+            2- "YAPI DENETİMİ HAKKINDA KANUNun "Amaç, kapsam ve tanımlar" başlıklı, 1.maddesinin ç bendinde belirtildiği üzere..."
+            """},
             {"role": "user", "content": prompt}
         ]
     )
