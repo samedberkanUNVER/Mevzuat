@@ -51,7 +51,7 @@ def setup_sidebar() -> bool:
 def get_embeddings(text: str) -> List[float]:
     response = openai.Embedding.create(
         input=text,
-        model="text-embedding-3-large"
+        model="text-embedding-ada-002"
     )
     return response['data'][0]['embedding']
 
